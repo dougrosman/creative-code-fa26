@@ -1,0 +1,14 @@
+body {
+   background: pink;
+}
+
+img {
+    width: 50vw;
+    display: block;
+}
+
+p {
+    font-size: 12px;
+    color: blue;
+    border: 10px dotted magenta;
+}
