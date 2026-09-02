@@ -14,10 +14,10 @@ function setup() {
         line(i + margin, height-margin, margin, i + margin)
 
         strokeWeight(8)
-        stroke(255, 0, 0)
-        point(i + margin, height-margin)
+        // stroke(255, 0, 0)
+        // point(i + margin, height-margin)
 
-        stroke(0, 255, 0)
-        point(margin, i + margin)
+        // stroke(0, 255, 0)
+        // point(margin, i + margin)
     }
 }
