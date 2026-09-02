@@ -1,17 +1,30 @@
+//let button;
+
 function setup() {
     createCanvas(400, 400)
+    //button = createButton("New Color")
+}
+
+function draw() {
     background(200)
 
-    let numRectangles = 14
-    let margin = height/numRectangles
+    let numLines = 17
+    let rectWidth = width/(numLines + 2)
+    let margin = rectWidth
 
-    let rectWidth = (width - margin*2)/numRectangles
-    let rectHeight = (height - margin*2)/numRectangles
+    for(let i = 0; i < numLines; i++) {
 
-    
+        // let r = map(i, 0, numLines, 255, 0)
+        let g = map(i, 0, numLines, 255, 0)
+        let b = map(i, 0, numLines, 0, 255)
 
-    for(let i = 0; i < numRectangles; i++) {
-        fill(i*(255/numRectangles))
-        rect(margin + (i*rectWidth), height - rectHeight * (i+1) - margin, rectWidth, rectHeight * (i+1))
+        stroke(255)
+        strokeWeight(2)
+        fill(255, g, b)
+        rect(margin + (i*rectWidth), margin, rectWidth, height - margin*2)
     }
+
+    // button.mousePressed(function(){
+    //     console.log("ok")
+    // })
 }

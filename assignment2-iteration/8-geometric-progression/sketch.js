@@ -2,16 +2,17 @@ function setup() {
     createCanvas(400, 400)
     background(200)
 
-    let numRectangles = 14
-    let margin = height/numRectangles
+    let numCircles = 22
+    let diameter = 5
+    let lineThickness = .2
 
-    let rectWidth = (width - margin*2)/numRectangles
-    let rectHeight = (height - margin*2)/numRectangles
+    for(let i = 0; i < numCircles; i++) {
 
-    
+        noFill();
+        strokeWeight(lineThickness)
+        circle(width/2, height, diameter)
 
-    for(let i = 0; i < numRectangles; i++) {
-        fill(i*(255/numRectangles))
-        rect(margin + (i*rectWidth), height - rectHeight * (i+1) - margin, rectWidth, rectHeight * (i+1))
+        diameter*=1.3
+        lineThickness*=1.3
     }
 }

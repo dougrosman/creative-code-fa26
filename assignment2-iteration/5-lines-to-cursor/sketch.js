@@ -2,16 +2,21 @@ function setup() {
     createCanvas(400, 400)
     background(200)
 
-    let numRectangles = 14
-    let margin = height/numRectangles
+}
 
-    let rectWidth = (width - margin*2)/numRectangles
-    let rectHeight = (height - margin*2)/numRectangles
+function draw() {
+    background(200)
 
-    
+    let margin = 40;
+    let numLines = 10;
+    let range = width - margin
 
-    for(let i = 0; i < numRectangles; i++) {
-        fill(i*(255/numRectangles))
-        rect(margin + (i*rectWidth), height - rectHeight * (i+1) - margin, rectWidth, rectHeight * (i+1))
+    for(let i = 0; i < numLines; i++) {
+
+        let anchorX = map(i, 0, numLines, margin, range)
+
+        strokeWeight(2)
+        line(anchorX, margin, mouseX, mouseY)
+        
     }
 }

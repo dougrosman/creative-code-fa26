@@ -2,16 +2,30 @@ function setup() {
     createCanvas(400, 400)
     background(200)
 
-    let numRectangles = 14
-    let margin = height/numRectangles
+    let numCheckers = 8;
 
-    let rectWidth = (width - margin*2)/numRectangles
-    let rectHeight = (height - margin*2)/numRectangles
+    let checkerWidth = width/numCheckers;
 
-    
+    for(let y = 0; y < numCheckers; y++) {
+        for(let x = 0; x < numCheckers; x++) {
 
-    for(let i = 0; i < numRectangles; i++) {
-        fill(i*(255/numRectangles))
-        rect(margin + (i*rectWidth), height - rectHeight * (i+1) - margin, rectWidth, rectHeight * (i+1))
+            if(y % 2 == 0) {
+                if(x % 2 == 0) {
+                    fill(255)
+                } else {
+                    fill(0)
+                }
+                square(x * checkerWidth, y * checkerWidth, checkerWidth)
+            } else {
+                if(x % 2 == 0) {
+                    fill(0)
+                } else {
+                    fill(255)
+                }
+                square(x * checkerWidth, y * checkerWidth, checkerWidth)
+            }
+            
+        }
     }
+
 }
